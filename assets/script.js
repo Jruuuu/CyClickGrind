@@ -14,9 +14,6 @@ $(document).ready(function () {
         //get block time
         var timeSlotTime = parseInt($(timeSlotArray[timeSlotIndex]).attr("data"));
 
-        console.log("currentTime", currentTime);
-        console.log("timeSlotTime", timeSlotTime);
-
         //check tense
         if (currentTime < timeSlotTime) {
             $(timeSlotArray[timeSlotIndex]).addClass("past");
@@ -27,96 +24,29 @@ $(document).ready(function () {
         }
     });
 
-    //pull this data from local
-    var dataTimeNotes = [
-        {
-            timeSlot: 9,
-            text: $("[data='9'] textarea").val(),
-        },
-        {
-            timeSlot: 10,
-            text: $("[data='9'] textarea").val(),
-        },
-        {
-            timeSlot: 11,
-            text: $("[data='9'] textarea").val(),
-        },
-        {
-            timeSlot: 12,
-            text: $("[data='9'] textarea").val(),
-        }, 
-        {
-            timeSlot: 13,
-            text: $("[data='9'] textarea").val(),
-        }, 
-        {
-            timeSlot: 14,
-            text: $("[data='9'] textarea").val(),
-        }, 
-        {
-            timeSlot: 15,
-            text: $("[data='9'] textarea").val(),
-        }, 
-        {
-            timeSlot: 16,
-            text: $("[data='9'] textarea").val(),
-        }, 
-        {
-            timeSlot: 17,
-            text: $("[data='9'] textarea").val(),
-        }
-    ];
-    //display the notes
 
-    function saveNotes() {
-        //get current data
-        dataTimeNotes = [
-            {
-                timeSlot: 9,
-                text: $("[data='9'] textarea").val(),
-            },
-            {
-                timeSlot: 10,
-                text: $("[data='9'] textarea").val(),
-            },
-            {
-                timeSlot: 11,
-                text: $("[data='9'] textarea").val(),
-            },
-            {
-                timeSlot: 12,
-                text: $("[data='9'] textarea").val(),
-            }, 
-            {
-                timeSlot: 13,
-                text: $("[data='9'] textarea").val(),
-            }, 
-            {
-                timeSlot: 14,
-                text: $("[data='9'] textarea").val(),
-            }, 
-            {
-                timeSlot: 15,
-                text: $("[data='9'] textarea").val(),
-            }, 
-            {
-                timeSlot: 16,
-                text: $("[data='9'] textarea").val(),
-            }, 
-            {
-                timeSlot: 17,
-                text: $("[data='9'] textarea").val(),
-            }
-        ];
-        // store this data in local
+    //get local stored data and populate the textarea
+    var timeSlotArray = $(".time-slot");
+    for (let i = 9; i < timeSlotArray.length + 9; i++) {
+        //check if null
+        var storedData = localStorage.getItem(`data${i}`);
+        console.log("*******", storedData);
+        if (storedData) {
+            //add the text to the right spot
+            $(`[data=${i}]`).find("textarea").val( storedData);
+        }
     }
 
-    //give save ntoes eventlistener
+    //add event listender to save button
+    $(".save-button").on("click",saveNotes);
 
-    //set save button function
-    // function saveBtn() {
-    //     //gets userinput from text area
-    //     // stores the userinput into key into storage location
-    //     //
-    // }
+    //save data
+    function saveNotes(event) {
+        //get the data
+        var timeText = $(event.target).siblings("textarea").val();
+        //get the id too
+        var id = $(event.target).closest(".time-slot").attr("data");
+        //store data
+        localStorage.setItem(`data${id}`,timeText);
+    }
 });
