@@ -6,7 +6,7 @@ I am a user that needs to be  my 9am - 5pm efficiently.
 ## TASKING
 - [X] Current day is present
 - [X] Visually can see the time blocks 9am to 5pm
-- [X] Each time block is color cordinated based on past, present or future for.
+- [X] Each time block is color cordinated based on past, present or future for user to input.
 - [X] Blocks have textarea for user to input notes and can be saved with the save button
 - [X] Notes are saved into the Local Storage
 - [X] Information is present even if page is refreshed.
