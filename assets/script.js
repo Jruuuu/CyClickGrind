@@ -2,7 +2,7 @@
 //set if  time statement to set a  past, present future class style
 $(document).ready(function () {
 
-    //display the current time
+    //display the current time using MOMENTS JS
     var currentTimeFull = moment().format("dddd, MMMM Do");
     $("#currentDay").text(currentTimeFull);
 
