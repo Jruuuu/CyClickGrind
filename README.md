@@ -38,5 +38,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 &copy; ENRILO M. UGALDE, UCSD EXTENSION SEP 2020 - MAR 2021 COHORT
 
+<a href="https://https://jruuuu.github.io/CyClickGrind/">***Finish Product: CyClickGrind***</a>
+--
 ### Example of what the end result should look like
 <img src="assets\gif\05-Third-Party-APIs_02-Homework_Assets_05-third-party-apis-homework-demo.gif" alt="Password Generator Example Screenshot" width="400px" height="250px"/>
