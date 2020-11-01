@@ -48,7 +48,7 @@ body {
   }
   
   .present {
-    background-color: #ff6961;
+    background-color: salmon;
     color: white;
   }
   
@@ -63,6 +63,7 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
+    display: inline-block;
   }
   
   .saveBtn i:hover {

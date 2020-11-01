@@ -37,7 +37,7 @@ $(document).ready(function () {
     }
 
     //add event listender to save button
-    $(".save-button").on("click",saveNotes);
+    $(".saveBtn").on("click",saveNotes);
 
     //save data
     function saveNotes(event) {
