@@ -30,7 +30,6 @@ $(document).ready(function () {
     for (let i = 9; i < timeSlotArray.length + 9; i++) {
         //check if null
         var storedData = localStorage.getItem(`data${i}`);
-        console.log("*******", storedData);
         if (storedData) {
             //add the text to the right spot
             $(`[data=${i}]`).find("textarea").val( storedData);
